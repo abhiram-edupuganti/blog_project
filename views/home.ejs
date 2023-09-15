@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p><%= startingContent %></p>
+<% posts.forEach(function(post){ %>
+    <div class="box">
+        <h1><%= post.title %></h1>
+        <p class="hundred-chars"><%= post.content.substring(0,100) +"..."%><a href="/posts/<%= post._id %>">Read More</a></p>
+    </div>
+    
+<% })  %>
+<div class="compose-page">
+    <button type="button" class="btn btn-light"><a class="compose-link" href="compose">Compose</a></button>
+</div>
+
+<%- include("partials/footer") -%>
